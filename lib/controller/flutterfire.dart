@@ -50,6 +50,7 @@ Future<bool> addCoin(String id, String amount) async {
       transaction.update(documentReference, {'Amount': newAmount});
       return true;
     });
+    return true;
   } catch (e) {
     return false;
   }
