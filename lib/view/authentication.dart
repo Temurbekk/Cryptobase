@@ -1,4 +1,7 @@
+import 'package:cryptobase/controller/flutterfire.dart';
 import 'package:flutter/material.dart';
+
+import 'homePage.dart';
 
 class Authentication extends StatefulWidget {
   Authentication({Key key}) : super(key: key);
@@ -56,7 +59,20 @@ class _AuthenticationState extends State<Authentication> {
                 color: Colors.white,
               ),
               child: MaterialButton(
-                onPressed: () {},
+                onPressed: () async {
+                  bool shouldNavigate =
+                      await register(_emailField.text, _passwordField.text);
+                  if (shouldNavigate) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => HomePage(),
+                      ),
+                    );
+                  } else {
+                    print("Could not navigate");
+                  }
+                },
                 child: Text("Register"),
               ),
             ),
@@ -68,7 +84,20 @@ class _AuthenticationState extends State<Authentication> {
                 color: Colors.white,
               ),
               child: MaterialButton(
-                onPressed: () {},
+                onPressed: () async {
+                  bool shouldNavigate =
+                      await signIn(_emailField.text, _passwordField.text);
+                  if (shouldNavigate) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => HomePage(),
+                      ),
+                    );
+                  } else {
+                    print("Could not navigate");
+                  }
+                },
                 child: Text("Login"),
               ),
             )
