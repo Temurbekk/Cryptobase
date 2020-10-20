@@ -48,6 +48,20 @@ class _AddViewState extends State<AddView> {
               keyboardType: TextInputType.text,
             ),
           ),
+          Container(
+            width: MediaQuery.of(context).size.width / 1.4,
+            height: 45,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15.0),
+              color: Colors.white,
+            ),
+            child: MaterialButton(
+              onPressed: () {
+                //TODO
+              },
+              child: Text("Add"),
+            ),
+          ),
         ],
       ),
     );
