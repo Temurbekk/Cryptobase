@@ -8,10 +8,40 @@ class AddView extends StatefulWidget {
 }
 
 class _AddViewState extends State<AddView> {
+  List<String> coins = [
+    'bitcoin',
+    'tether',
+    'etherium',
+  ];
+
+  String dropDownValue = 'bitcoin';
+  TextEditingController _amountController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: Text("Hello"),
+      child: Column(
+        children: [
+          DropdownButton(
+            value: dropDownValue,
+            onChanged: (String value) {
+              setState(
+                () {
+                  dropDownValue = value;
+                },
+              );
+            },
+            items: coins.map<DropdownMenuItem<String>>(
+              (String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              },
+            ).toList(),
+          )
+        ],
+      ),
     );
   }
 }
