@@ -1,3 +1,4 @@
+import 'package:cryptobase/controller/flutterfire.dart';
 import 'package:flutter/material.dart';
 
 class AddView extends StatefulWidget {
@@ -57,8 +58,8 @@ class _AddViewState extends State<AddView> {
               color: Colors.white,
             ),
             child: MaterialButton(
-              onPressed: () {
-                //TODO
+              onPressed: () async {
+                await addCoin(dropDownValue, _amountController.text);
                 Navigator.of(context).pop();
               },
               child: Text("Add"),
