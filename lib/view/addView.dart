@@ -39,7 +39,15 @@ class _AddViewState extends State<AddView> {
                 );
               },
             ).toList(),
-          )
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width / 1.3,
+            child: TextFormField(
+              controller: _amountController,
+              decoration: InputDecoration(labelText: "Coin Amount"),
+              keyboardType: TextInputType.text,
+            ),
+          ),
         ],
       ),
     );
