@@ -21,6 +21,7 @@ class _AddViewState extends State<AddView> {
   Widget build(BuildContext context) {
     return Material(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           DropdownButton(
             value: dropDownValue,
@@ -58,6 +59,7 @@ class _AddViewState extends State<AddView> {
             child: MaterialButton(
               onPressed: () {
                 //TODO
+                Navigator.of(context).pop();
               },
               child: Text("Add"),
             ),
